@@ -1,0 +1,27 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+
+import "../styles/global.css";
+
+export const getStaticPaths = (async () => {
+	const posts = await getCollection("posts");
+
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: { post },
+	}));
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+
+const { Content, remarkPluginFrontmatter, headings } = await post.render();
+---
+
+<html>
+	<meta charset="utf-8" />
+	<h1>{remarkPluginFrontmatter.title}</h1>
+	<Content />
+
+
+</html>
