@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import PostEntry from "../components/PostEntry.astro";
+import "../styles/global.css";
+
+const allPosts = (await getCollection("posts"))
+	.filter((post) => post.data.publishDate)
+	.sort(
+		(a, b) => b.data.publishDate!.getTime() - a.data.publishDate!.getTime()
+	);
+---
+
+<BaseLayout title="Posts">
+	<div class="container">
+		{
+			allPosts.map((post) => (
+				<PostEntry
+					slug={post.slug}
+					title={post.data.title}
+					date={post.data.publishDate}
+				/>
+			))
+		}
+	</div>
+</BaseLayout>
+
+<style>
+	.container {
+		display: flex;
+		flex-direction: column;
+		row-gap: 4px;
+	}
+</style>
