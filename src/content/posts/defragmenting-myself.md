@@ -5,14 +5,14 @@ publishDate: null
 
 It's bugging me how many different apps and services I currently use to "organise" all of my digital _stuff_. Off the top of my head, I have:
 
-- **Gmail** for emails
-- **Todoist** for tasks
-- **Instapaper** for any articles I want to read later, or maybe just generic bookmarks if I felt especially wild that day
-- **Google Drive** for the majority of my personal files
-- **Dropbox** for a subset of other files which, for whatever reason, can't go in Google Drive
-- **Obsidian Vault 1** for personal notes
-- **Obsidian Vault 2** for work notes
-- **Simplenote** for _more_ personal notes (that I wrote before switching to Obsidian on a whim)
+-   **Gmail** for emails
+-   **Todoist** for tasks
+-   **Instapaper** for any articles I want to read later, or maybe just generic bookmarks if I felt especially wild that day
+-   **Google Drive** for the majority of my personal files
+-   **Dropbox** for a subset of other files which, for whatever reason, can't go in Google Drive
+-   **Obsidian Vault 1** for personal notes
+-   **Obsidian Vault 2** for work notes
+-   **Simplenote** for _more_ personal notes (that I wrote before switching to Obsidian on a whim)
 
 I wanted to write about them all partially because it might be interesting but mainly because it will help me lay out my current structure and start thinking about how I can pare it down and improve it.
 

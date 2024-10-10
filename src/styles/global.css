@@ -62,9 +62,10 @@ ul {
 }
 
 hr {
-	background: black;
+	background: hsl(0, 0%, 80%);
 	height: 1px;
 	border: 0;
+	margin: 8px 0;
 }
 
 h1 {

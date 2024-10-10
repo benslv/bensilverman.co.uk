@@ -7,7 +7,7 @@ const { title, slug, date } = Astro.props;
 		{title}
 	</a>
 	<span class="date">
-		{date.toISOString().split("T")[0]}
+		{date.toISOString().slice(0, 10)}
 	</span>
 </div>
 

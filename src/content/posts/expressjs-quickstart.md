@@ -1,6 +1,6 @@
 ---
-publishDate: 2021-05-13
 title: An ExpressJS Quickstart
+publishDate: 2021-05-13
 ---
 
 In this post we're going to cover how to create your own local web server using the `express` [package](https://npmjs.com/express). It's a pretty straightforward process, so let's begin!
