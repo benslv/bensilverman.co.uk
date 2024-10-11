@@ -1,6 +1,6 @@
 ---
 publishDate: 2024-09-17
-title: Write tests that fail
+title: Do your tests fail?
 description: "Avoid false positives with this one quick trick!"
 ---
 

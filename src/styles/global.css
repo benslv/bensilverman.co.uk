@@ -21,6 +21,10 @@
 	margin: 0;
 }
 
+html {
+	height: 100%;
+}
+
 body {
 	background-color: var(--slate-1);
 	line-height: 1.5;
@@ -37,6 +41,7 @@ body {
 		"Open Sans",
 		"Helvetica Neue",
 		sans-serif;
+	height: 100%;
 }
 
 /*

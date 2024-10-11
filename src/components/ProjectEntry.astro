@@ -17,15 +17,14 @@ const { url, title, description } = Astro.props;
 	p {
 		color: var(--slate-11);
 		margin: 0;
+	}
+	a {
+		color: var(--slate-12);
+		font-weight: 500;
+		text-decoration: none;
 
-		& a {
-			color: var(--slate-12);
-			font-weight: 500;
-			text-decoration: none;
-
-			&:hover {
-				text-decoration: underline;
-			}
+		&:hover {
+			text-decoration: underline;
 		}
 	}
 </style>
