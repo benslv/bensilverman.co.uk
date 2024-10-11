@@ -1,18 +1,25 @@
 import PostList from "../components/PostList.astro";
+import ProjectList from "../components/ProjectList.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
 
 <BaseLayout>
+	# Hi, I'm Ben!
 
-  # Hi, I'm Ben!
+	I'm passionate about all things frontend, and love the opportunities it provides to intersect development with design. If I'm not at my computer, you can probably find me at the gym, reading, or playing my saxophone in my local band! 🎷
 
-  I'm a software engineer at [Warner Bros. Discovery](https://wbd.com), currently focused on developing our flagship streaming platform, [Max](https://max.com).
-
-  I'm passionate about all things frontend, and love the opportunities it provides to intersect development with design. If I'm not at my computer, you can probably find me at the gym, reading, or playing my saxophone in my local band! 🎷
-
-  ## Posts
-  ---
+	## Posts
 	<PostList limit={3} />
+	[See all →](/posts)
 
-  [See all →](/posts)
+	## Experience
+
+	Right now I'm building [Max](https://max.com) as a software engineer at [Warner Bros. Discovery](https://wbd.com), focussing on high-performance code for smart TVs, set-top boxes, and games consoles.
+
+	Before that I worked at [Arm](https://arm.com) on my industrial placement, implementing a component-driven architecture in React for Arm Developer Community, and writing backend Azure policies to introduce new functionality to Arm Account.
+
+	## Projects
+
+	<ProjectList/>
+
 </BaseLayout>

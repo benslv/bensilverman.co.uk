@@ -1,0 +1,18 @@
+---
+import { getCollection } from "astro:content";
+import ProjectEntry from "./ProjectEntry.astro";
+
+const allProjects = await getCollection("projects");
+---
+
+<div>
+	{
+		allProjects.map((project) => (
+			<ProjectEntry
+				url={project.data.url}
+				title={project.data.title}
+				description={project.data.description}
+			/>
+		))
+	}
+</div>

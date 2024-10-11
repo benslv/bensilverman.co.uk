@@ -8,6 +8,17 @@ const postCollection = defineCollection({
 	}),
 });
 
+const projectCollection = defineCollection({
+	type: "data",
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		url: z.string(),
+		repoUrl: z.string(),
+	}),
+});
+
 export const collections = {
 	posts: postCollection,
+	projects: projectCollection,
 };

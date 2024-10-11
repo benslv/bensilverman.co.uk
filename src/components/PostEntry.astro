@@ -1,4 +1,10 @@
 ---
+interface Props {
+	title: string;
+	slug: string;
+	date: Date | null;
+}
+
 const { title, slug, date } = Astro.props;
 ---
 
@@ -6,9 +12,7 @@ const { title, slug, date } = Astro.props;
 	<a class="link" href={slug}>
 		{title}
 	</a>
-	<span class="date">
-		{date.toISOString().slice(0, 10)}
-	</span>
+	{date && <span class="date">{date.toISOString().slice(0, 10)}</span>}
 </div>
 
 <style>
