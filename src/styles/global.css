@@ -1,3 +1,8 @@
+@import "@radix-ui/colors/slate.css";
+@import "@radix-ui/colors/slate-dark.css";
+@import "@radix-ui/colors/cyan.css";
+@import "@radix-ui/colors/cyan-dark.css";
+
 @font-face {
 	font-family: "JetBrains Mono";
 	src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
@@ -17,6 +22,7 @@
 }
 
 body {
+	background-color: var(--slate-1);
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
 	font-family:
@@ -71,16 +77,24 @@ hr {
 h1 {
 	font-size: 2rem;
 	margin-bottom: 1rem;
+	color: var(--slate-12);
 }
 
 h2,
 h3 {
 	margin-top: 1.2rem;
 	margin-bottom: 0.5rem;
+	color: var(--slate-12);
 }
 
 p {
+	color: var(--slate-12);
 	margin: 1em 0;
+}
+
+a {
+	font-weight: 500;
+	color: var(--cyan-11);
 }
 
 pre {
@@ -94,9 +108,9 @@ code {
 	font-family: "JetBrains Mono", monospace;
 
 	:not(pre) > & {
-		background: hsl(0, 0%, 95%);
+		background: var(--slate-2);
 		padding: 1px 2px;
-		border: 1px solid hsl(0, 0%, 85%);
+		border: 1px solid var(--slate-6);
 		border-radius: 4px;
 	}
 }

@@ -9,18 +9,23 @@ const { url, title, description } = Astro.props;
 ---
 
 <p>
-	<a href={url}>{title}</a>
+	<a href={url} target="_blank">{title},</a>
 	{description}
 </p>
 
 <style>
 	p {
-		color: grey;
+		color: var(--slate-11);
+		margin: 0;
 
 		& a {
-			color: black;
-			font-weight: 600;
+			color: var(--slate-12);
+			font-weight: 500;
 			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 </style>

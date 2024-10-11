@@ -1,5 +1,7 @@
 ---
 const { title } = Astro.props;
+
+import "../styles/global.css";
 ---
 
 <html lang="en">
@@ -9,7 +11,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<article>
+		<article class="article">
 			{title && <h1>{title}</h1>}
 			<slot />
 		</article>

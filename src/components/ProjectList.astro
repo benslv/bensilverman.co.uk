@@ -5,7 +5,7 @@ import ProjectEntry from "./ProjectEntry.astro";
 const allProjects = await getCollection("projects");
 ---
 
-<div>
+<div class="container">
 	{
 		allProjects.map((project) => (
 			<ProjectEntry
@@ -16,3 +16,11 @@ const allProjects = await getCollection("projects");
 		))
 	}
 </div>
+
+<style>
+	.container {
+		display: flex;
+		flex-direction: column;
+		row-gap: 4px;
+	}
+</style>
