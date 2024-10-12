@@ -18,7 +18,17 @@ const projectCollection = defineCollection({
 	}),
 });
 
+const gameCollection = defineCollection({
+	type: "content",
+	schema: z.object({
+		title: z.string(),
+		dateCompleted: z.date(),
+		rating: z.number().int().min(1).max(5),
+	}),
+});
+
 export const collections = {
 	posts: postCollection,
 	projects: projectCollection,
+	games: gameCollection,
 };
