@@ -6,7 +6,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import "../../styles/global.css";
 
 export const getStaticPaths = (async () => {
-	const posts = await getCollection("posts");
+	const posts = await getCollection(
+		"posts",
+		({ data }) => data.datePublished !== null
+	);
 
 	return posts.map((post) => ({
 		params: { slug: post.slug },
