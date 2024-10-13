@@ -13,7 +13,7 @@ const projectCollection = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
-		url: z.string(),
+		url: z.string().url().optional(),
 		repoUrl: z.string(),
 	}),
 });
