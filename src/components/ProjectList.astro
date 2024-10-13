@@ -2,7 +2,15 @@
 import { getCollection } from "astro:content";
 import ProjectEntry from "./ProjectEntry.astro";
 
-const allProjects = await getCollection("projects");
+interface Props {
+	featuredOnly?: boolean;
+}
+
+const { featuredOnly } = Astro.props;
+
+const allProjects = await getCollection("projects", ({ data }) =>
+	featuredOnly ? data.featured : true
+);
 ---
 
 <div>
