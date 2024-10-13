@@ -1,7 +1,8 @@
 ---
 title: Using next-themes with Stitches and Next.js
-publishDate: 2021-12-18
+datePublished: 2021-12-18
 ---
+
 I've been building my website with the help of an amazing CSS-in-JSS solution called [Stitches](https://stitches.dev). If you haven't heard of it before I would definitely recommend taking a peek at their website and giving it a try because I almost instantly converted across from `styled-components`.
 
 This isn't a post all about how great I think Stitches is, as much as the dev team would probably love it, though. Instead, I wanted to quickly write-up how I got dark mode working on this site using Next.js, Stitches and a little package called [`next-themes`](https://www.npmjs.com/package/next-themes).
@@ -24,11 +25,11 @@ import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 
 function App({ Component, pageProps }: AppProps): JSX.Element {
-  return (
-    <ThemeProvider>
-      <Component {...pageProps} />
-    </ThemeProvider>
-  );
+	return (
+		<ThemeProvider>
+			<Component {...pageProps} />
+		</ThemeProvider>
+	);
 }
 export default App;
 ```
@@ -43,17 +44,17 @@ Head on over to your Stitches config file (`stitches.config.ts`, for me) and imp
 import { createStitches, createTheme } from "@stitches/react";
 
 export const { styled, css, theme } = createStitches({
-  // other styling here...
+	// other styling here...
 });
 
 // Create your new dark theme below, like this.
 export const darkTheme = createTheme("dark", {
-  colors: {
-    text: "black",
-    heading: "grey",
-    background: "white",
-    accent: "cyan",
-  },
+	colors: {
+		text: "black",
+		heading: "grey",
+		background: "white",
+		accent: "cyan",
+	},
 });
 ```
 
@@ -70,16 +71,17 @@ import { ThemeProvider } from "next-themes";
 import { darkTheme } from "../stitches.config";
 
 function App({ Component, pageProps }: AppProps): JSX.Element {
-  return (
-    <ThemeProvider
-      attribute="class"
-      value={{
-        dark: darkTheme.toString(), // this .toString() is important
-        light: "light",
-      }}>
-      <Component {...pageProps} />
-    </ThemeProvider>
-  );
+	return (
+		<ThemeProvider
+			attribute="class"
+			value={{
+				dark: darkTheme.toString(), // this .toString() is important
+				light: "light",
+			}}
+		>
+			<Component {...pageProps} />
+		</ThemeProvider>
+	);
 }
 export default App;
 ```

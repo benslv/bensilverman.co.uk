@@ -1,6 +1,6 @@
 ---
 title: "How to make Vercel play nice with Remix and Keystatic"
-publishDate: 2024-05-23
+datePublished: 2024-05-23
 ---
 
 ## TL;DR

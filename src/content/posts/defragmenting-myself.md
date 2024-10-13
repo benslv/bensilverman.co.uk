@@ -1,6 +1,6 @@
 ---
 title: Defragging Myself
-publishDate: null
+datePublished: null
 ---
 
 It's bugging me how many different apps and services I currently use to "organise" all of my digital _stuff_. Off the top of my head, I have:

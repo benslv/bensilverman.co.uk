@@ -1,10 +1,11 @@
 ---
 title: Rewriting my website
-publishDate: 2024-05-18
+datePublished: 2024-05-18
 ---
+
 I recently decided to completely rewrite my website. My old one sat, unchanged, for almost 3 years and I never really put much effort into adding new features to it or updating it with content, despite it being technically possible.&#x20;
 
-The process just had too much friction and I never felt like had anything big enough to say that it would be worth the effort; I didn't want to have to open a code editor just to write a little Markdown post, and I *certainly* didn't want to have to start creating pull requests in GitHub to get that content live.
+The process just had too much friction and I never felt like had anything big enough to say that it would be worth the effort; I didn't want to have to open a code editor just to write a little Markdown post, and I _certainly_ didn't want to have to start creating pull requests in GitHub to get that content live.
 
 So, I decided to rewrite it all, and look for a way to write and manage this site's content that was more inline with a traditional CMS. It would be nice to be able to access it anywhere, from any device, so I'm not restricted only to places that I happen to have cloned my site's repo to.
 

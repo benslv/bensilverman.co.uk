@@ -1,10 +1,11 @@
 ---
 title: Creating a reusable media query function
-publishDate: 2021-06-03
+datePublished: 2021-06-03
 description: A quick guide on how to make a reusable function to handle media queries.
 tags:
-  - snippet
+    - snippet
 ---
+
 ## In short
 
 ```js
