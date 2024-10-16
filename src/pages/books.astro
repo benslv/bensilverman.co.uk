@@ -1,0 +1,68 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const books = await getCollection("books");
+
+books.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout>
+	<div class="container">
+		{
+			books.map((book) => (
+					<span class="title">{book.data.title}</span>
+					<span class="author">{book.data.author}</span>
+					<span class="date">
+						{book.data.date.toISOString().slice(0, 10)}
+					</span>
+					<span class="rating">{"★".repeat(book.data.rating)}</span>
+			))
+		}
+	</div>
+</BaseLayout>
+
+<style>
+	.container {
+		display: grid;
+		grid-template-columns: 1fr 0.65fr min-content 70px;
+		column-gap: 8px;
+		row-gap: 4px;
+	}
+
+
+	table {
+		max-width: 100%;
+	}
+
+	tbody {
+		color: var(--slate-11);
+	}
+
+	th,
+	td {
+		padding: 2px 8px;
+	}
+
+	.title {
+		font-weight: 500;
+		color: var(--slate-12);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		/* max-width: 300px; */
+	}
+
+	.author {
+		white-space: nowrap;
+	}
+
+	.date {
+		font-variant-numeric: tabular-nums;
+	}
+
+	.rating {
+		color: var(--slate-12);
+	}
+</style>

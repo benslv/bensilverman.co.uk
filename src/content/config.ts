@@ -28,8 +28,20 @@ const gameCollection = defineCollection({
 	}),
 });
 
+const bookCollection = defineCollection({
+	type: "content",
+	schema: z.object({
+		title: z.string(),
+		id: z.string(),
+		author: z.string(),
+		rating: z.number(),
+		date: z.date(),
+	}),
+});
+
 export const collections = {
 	posts: postCollection,
 	projects: projectCollection,
 	games: gameCollection,
+	books: bookCollection,
 };
