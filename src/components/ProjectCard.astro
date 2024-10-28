@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+	project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+
+const {
+	data: { title, url, repoUrl, description },
+} = project;
+---
+
+<div>
+  <div></div>
+  <div>
+    <a href={url ?? repoUrl} target="_blank">{title}</a>
+    <p>{description}</p>
+  </div>
+</div>
