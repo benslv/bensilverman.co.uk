@@ -23,5 +23,12 @@ const { Content } = await note.render();
 ---
 
 <BaseLayout title={note.data.title}>
+	<p>
+		{
+			note.data.datePublished!.toLocaleString("en-GB", {
+				dateStyle: "medium",
+			})
+		}
+	</p>
 	<Content />
 </BaseLayout>
