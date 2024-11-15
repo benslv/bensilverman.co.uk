@@ -1,0 +1,54 @@
+---
+import { getEntry } from "astro:content";
+
+interface Props {
+	title: string;
+	slug: string;
+	date: Date;
+}
+
+const { title, slug, date } = Astro.props;
+
+const note = await getEntry("notes", slug);
+
+if (!note) {
+	throw new Error(`Note with slug ${slug} not found.`);
+}
+
+const { Content } = await note.render();
+---
+
+<div class="container">
+	<h2 class="title"><a>{title}</a></h2>
+	<div class="divider"></div>
+	<p class="date">
+		{date.toLocaleString("en-GB", { dateStyle: "medium" })}
+	</p>
+</div>
+<Content />
+
+<style>
+	.container {
+		display: flex;
+		align-items: center;
+		column-gap: 8px;
+	}
+
+	.divider {
+		height: 1px;
+		flex: 1;
+		background: var(--slate-6);
+	}
+
+	.title {
+		font-size: unset;
+		white-space: nowrap;
+		margin: 0;
+	}
+
+	.date {
+		color: var(--slate-11);
+		white-space: nowrap;
+		margin: 0;
+	}
+</style>
