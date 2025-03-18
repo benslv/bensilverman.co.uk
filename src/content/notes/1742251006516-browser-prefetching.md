@@ -1,6 +1,6 @@
 ---
 slug: browser-prefetching
-title: Prefetching considered...harmful?
+title: Prefetching considered harmful
 datePublished: 2025-03-17
 ---
 
