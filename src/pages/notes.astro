@@ -6,7 +6,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const allNotes = await getCollection(
 	"notes",
 	({ data }) => data.datePublished !== null
-);
+).then((data) => data.toReversed());
 ---
 
 <BaseLayout title="Notes">
