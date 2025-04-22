@@ -3,6 +3,8 @@ title: Rewriting my website
 datePublished: 2024-05-18
 ---
 
+> **Just a quick note** that, since writing this post, I rewrote my website _again_. I guess some things are never constant. I'm even thinking about starting it from scratch for a third (fourth?) time because I'm never happy with it and I don't know what I want.
+
 I recently decided to completely rewrite my website. My old one sat, unchanged, for almost 3 years and I never really put much effort into adding new features to it or updating it with content, despite it being technically possible.&#x20;
 
 The process just had too much friction and I never felt like had anything big enough to say that it would be worth the effort; I didn't want to have to open a code editor just to write a little Markdown post, and I _certainly_ didn't want to have to start creating pull requests in GitHub to get that content live.
