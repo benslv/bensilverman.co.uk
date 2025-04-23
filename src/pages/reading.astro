@@ -7,8 +7,7 @@ const books = await getCollection("books");
 books.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<BaseLayout>
-	<h1>Books I've Read</h1>
+<BaseLayout title="Books I've Read">
 	<div class="container">
 		{
 			books.map((book) => (
