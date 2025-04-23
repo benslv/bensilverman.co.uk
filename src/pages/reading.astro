@@ -8,6 +8,7 @@ books.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <BaseLayout>
+	<h1>Books I've Read</h1>
 	<div class="container">
 		{
 			books.map((book) => (
@@ -25,23 +26,9 @@ books.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 <style>
 	.container {
 		display: grid;
-		grid-template-columns: 1fr 0.65fr min-content 70px;
+		grid-template-columns: 1fr 0.65fr min-content min-content;
 		column-gap: 8px;
 		row-gap: 4px;
-	}
-
-
-	table {
-		max-width: 100%;
-	}
-
-	tbody {
-		color: var(--slate-11);
-	}
-
-	th,
-	td {
-		padding: 2px 8px;
 	}
 
 	.title {
@@ -50,12 +37,12 @@ books.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-
-		/* max-width: 300px; */
 	}
 
 	.author {
 		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
 	.date {
@@ -65,5 +52,16 @@ books.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 	.rating {
 		color: var(--slate-12);
+	}
+
+
+	@media (max-width: 640px) {
+		.container {
+			grid-template-columns: 1fr;
+		}
+
+		.rating {
+			margin-bottom: 8px;
+		}
 	}
 </style>
