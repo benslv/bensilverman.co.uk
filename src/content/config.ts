@@ -17,7 +17,7 @@ const noteCollection = defineCollection({
 });
 
 const projectCollection = defineCollection({
-	type: "data",
+	type: "content",
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),

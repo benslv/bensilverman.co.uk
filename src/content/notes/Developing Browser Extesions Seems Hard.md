@@ -1,5 +1,4 @@
 ---
-slug: browser-extension
 title: Developing browser extensions seems...hard?
 datePublished: 2024-11-14
 ---
