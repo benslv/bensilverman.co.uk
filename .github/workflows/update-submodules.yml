@@ -53,13 +53,13 @@ jobs:
                   fi
 
             # Commit and push changes if submodules were updated
-            # This step now explicitly uses the GITHUB_TOKEN for the push
+            # This step now uses the standard git push command
             - name: Commit and Push Changes
               if: steps.check_changes.outputs.no_changes == 'false'
               run: |
                   git add .
                   git commit -m "chore: Update submodules via GitHub Actions"
-                  git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
+                  git push
 
             # Print a message if no changes were found
             - name: No Changes Found
