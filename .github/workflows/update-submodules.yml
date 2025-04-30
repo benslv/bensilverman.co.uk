@@ -53,7 +53,15 @@ jobs:
             - name: Commit and Push Changes
               if: steps.check_changes.outputs.no_changes == 'false'
               run: |
-                  echo "Submodules have updates"
+                  git add .
+                  git commit -m "chore: Update submodules via GitHub Actions"
+
+            - name: Push changes
+              if: steps.check_changes.outputs.no_changes == 'false'
+              uses: ad-m/github-push-action@master
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  branch: ${{ github.ref }}
 
             # Print a message if no changes were found
             - name: No Changes Found
