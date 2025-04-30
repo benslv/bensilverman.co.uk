@@ -1,0 +1,60 @@
+name: Update Submodules
+
+on:
+    # Schedule the workflow to run every 30 minutes
+    schedule:
+        # The cron expression '*/30 * * * *' means "at every 30th minute"
+        # This will run at :00 and :30 past the hour
+        - cron: "*/30 * * * *"
+    # Allows you to run this workflow manually from the Actions tab
+    workflow_dispatch:
+
+jobs:
+    update-submodules:
+        runs-on: ubuntu-latest
+
+        steps:
+            # Checkout the main repository
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+              with:
+                  # Fetch all history for all branches and tags
+                  # This is necessary for git submodule update --remote
+                  fetch-depth: 0
+                  # Fetch submodules recursively
+                  submodules: true
+
+            # Configure Git user for commits
+            - name: Configure Git
+              run: |
+                  git config user.name "GitHub Actions Bot"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+
+            # Update submodules to the latest commit on their default branch
+            - name: Update Submodules
+              run: |
+                  git submodule update --init --recursive --remote
+
+            # Check if there are any changes to commit (i.e., submodule pointers updated)
+            - name: Check for Changes
+              id: check_changes
+              run: |
+                  if git diff --exit-code --quiet; then
+                    echo "no_changes=true" >> $GITHUB_OUTPUT
+                  else
+                    echo "no_changes=false" >> $GITHUB_OUTPUT
+                  fi
+
+            # Commit and push changes if submodules were updated
+            - name: Commit and Push Changes
+              if: steps.check_changes.outputs.no_changes == 'false'
+              run: |
+                  git add .
+                  git commit -m "chore: Update submodules via GitHub Actions"
+                  git push
+
+            # Print a message if no changes were found
+            - name: No Changes Found
+              if: steps.check_changes.outputs.no_changes == 'true'
+              run: |
+                  echo "Submodules are already up to date."
