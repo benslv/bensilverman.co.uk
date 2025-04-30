@@ -4,7 +4,7 @@ import { getEntry, render } from "astro:content";
 interface Props {
 	title: string;
 	id: string;
-	date: Date;
+	date?: Date;
 }
 
 const { title, id, date } = Astro.props;
@@ -22,7 +22,7 @@ const { Content } = await render(note);
 	<h2 class="title"><a href={`/notes/${id}`}>{title}</a></h2>
 	<div class="divider"></div>
 	<p class="date">
-		{date.toLocaleString("en-GB", { dateStyle: "medium" })}
+		{date?.toLocaleString("en-GB", { dateStyle: "medium" })}
 	</p>
 </div>
 <Content />

@@ -5,7 +5,8 @@ const postCollection = defineCollection({
 	loader: glob({ pattern: "**/*.md", base: "./src/content/posts" }),
 	schema: z.object({
 		title: z.string(),
-		date: z.date().nullable(),
+		date: z.date(),
+		draft: z.boolean(),
 	}),
 });
 
@@ -13,7 +14,8 @@ const noteCollection = defineCollection({
 	loader: glob({ pattern: "**/*.md", base: "./src/content/notes" }),
 	schema: z.object({
 		title: z.string(),
-		date: z.date().nullable(),
+		date: z.date(),
+		draft: z.boolean(),
 	}),
 });
 

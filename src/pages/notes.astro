@@ -3,20 +3,16 @@ import { getCollection } from "astro:content";
 import Note from "../components/Note.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const allNotes = await getCollection(
-	"notes",
-	({ data }) => data.datePublished !== null
-).then((data) => data.toReversed());
+const allNotes = await getCollection("notes", ({ data }) => !data.draft).then(
+	(data) =>
+		data.toSorted((a, b) => b.data.date.getTime() - a.data.date.getTime())
+);
 ---
 
 <BaseLayout title="Notes">
 	{
 		allNotes.map((note) => (
-			<Note
-				id={note.id}
-				title={note.data.title}
-				date={note.data.datePublished!}
-			/>
+			<Note id={note.id} title={note.data.title} date={note.data.date} />
 		))
 	}
 </BaseLayout>

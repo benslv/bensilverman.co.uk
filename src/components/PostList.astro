@@ -8,13 +8,12 @@ interface Props {
 
 const { limit } = Astro.props;
 
-const allPosts = (await getCollection("posts"))
-	.filter((post) => post.data.datePublished)
-	.sort(
-		(a, b) =>
-			b.data.datePublished!.getTime() - a.data.datePublished!.getTime()
-	)
-	.slice(0, limit);
+const allPosts = await getCollection("posts", ({ data }) => !data.draft).then(
+	(data) =>
+		data
+			.toSorted((a, b) => b.data.date.getTime() - a.data.date.getTime())
+			.slice(0, limit)
+);
 ---
 
 <div class="container">
@@ -23,7 +22,7 @@ const allPosts = (await getCollection("posts"))
 			<PostEntry
 				slug={`/posts/${post.id}`}
 				title={post.data.title}
-				date={post.data.datePublished}
+				date={post.data.date}
 			/>
 		))
 	}
