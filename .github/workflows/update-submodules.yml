@@ -23,6 +23,7 @@ jobs:
                   fetch-depth: 0
                   # Fetch submodules recursively
                   submodules: true
+                  token: ${{ secrets.PAT_TOKEN }}
 
             # Configure Git user for commits
             - name: Configure Git
