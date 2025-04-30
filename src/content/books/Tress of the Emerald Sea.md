@@ -1,9 +1,0 @@
----
-id: "60531406"
-title: Tress of the Emerald Sea
-author: Brandon Sanderson
-rating: 3
-date: 2024-05-30
----
-Not particularly fond of this one.<br/><br/>To get the most out of this book, and to not have it be riddled with numerous, unfamiliar references to other magic systems and planets and peoples, you basically need to have read every single Mistborn book, every Stormlight Archive novel, Warbreaker, Elantris, and probably half of the Arcanum unbounded for good measure too. All of that pre-reading for a story which, honestly, I just didn’t think was very fun to read.<br/><br/>Despite Hoid <i>technically</i> narrating this book—another person/reference that will add absolutely nothing unless you've read other Cosmere novels beforehand—the tone of voice was completely off for me, and really just seemed like Sanderson himself wanting an excuse to try out a sillier, more self-aware approach to his Cosmere series; a gamble which didn't pay off.<br/><br/>I'm convinced this book was solely written as a vehicle for introducing <i>yet another</i> magic system to the Cosmere. Sanderson is evidently very proud of this spore-based system he's devised; he takes great care to write about every single interaction in excruciating detail at every single point throughout the book. I don't think this wholly bad bad, to be fair—Brandon Sanderson has always made a point of writing magic which is explainable and correct within his universe—but in this instance the rest of the writing really suffered for it. The plot and character motivations are nothing to write home about, with the same "unassuming young girl discovers what's she's truly capable when the person she loves is mysteriously kidnapped by an evil sorceress" trope being used as in probably hundreds of other Young Adult books. Sanderson already used this outline for Mistborn, too, with much greater success. Go and read that instead!!!
-	

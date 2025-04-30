@@ -1,7 +1,0 @@
----
-id: "129131"
-title: "The State of the Art (Culture, #4)"
-author: Iain M. Banks
-rating: 3
-date: 2020-08-08
----

@@ -1,7 +1,0 @@
----
-id: "25899336"
-title: When Breath Becomes Air
-author: Paul Kalanithi
-rating: 3
-date: 2024-05-12
----
