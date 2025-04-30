@@ -21,7 +21,7 @@ const allPosts = (await getCollection("posts"))
 	{
 		allPosts.map((post) => (
 			<PostEntry
-				slug={`/posts/${post.slug}`}
+				slug={`/posts/${post.id}`}
 				title={post.data.title}
 				date={post.data.datePublished}
 			/>

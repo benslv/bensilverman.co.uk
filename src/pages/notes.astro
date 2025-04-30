@@ -13,7 +13,7 @@ const allNotes = await getCollection(
 	{
 		allNotes.map((note) => (
 			<Note
-				slug={note.slug}
+				id={note.id}
 				title={note.data.title}
 				date={note.data.datePublished!}
 			/>

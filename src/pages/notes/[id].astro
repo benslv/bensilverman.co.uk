@@ -1,6 +1,6 @@
 ---
 import type { GetStaticPaths } from "astro";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import "../../styles/global.css";
@@ -12,14 +12,14 @@ export const getStaticPaths = (async () => {
 	);
 
 	return notes.map((note) => ({
-		params: { slug: note.slug },
+		params: { id: note.id },
 		props: { note },
 	}));
 }) satisfies GetStaticPaths;
 
 const { note } = Astro.props;
 
-const { Content } = await note.render();
+const { Content } = await render(note);
 ---
 
 <BaseLayout title={note.data.title}>

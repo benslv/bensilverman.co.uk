@@ -1,25 +1,25 @@
 ---
-import { getEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
 
 interface Props {
 	title: string;
-	slug: string;
+	id: string;
 	date: Date;
 }
 
-const { title, slug, date } = Astro.props;
+const { title, id, date } = Astro.props;
 
-const note = await getEntry("notes", slug);
+const note = await getEntry("notes", id);
 
 if (!note) {
-	throw new Error(`Note with slug ${slug} not found.`);
+	throw new Error(`Note with slug ${id} not found.`);
 }
 
-const { Content } = await note.render();
+const { Content } = await render(note);
 ---
 
 <div class="container">
-	<h2 class="title"><a href={`/notes/${slug}`}>{title}</a></h2>
+	<h2 class="title"><a href={`/notes/${id}`}>{title}</a></h2>
 	<div class="divider"></div>
 	<p class="date">
 		{date.toLocaleString("en-GB", { dateStyle: "medium" })}

@@ -1,7 +1,8 @@
+import { glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 
 const postCollection = defineCollection({
-	type: "content",
+	loader: glob({ pattern: "**/*.md", base: "./src/content/posts" }),
 	schema: z.object({
 		title: z.string(),
 		datePublished: z.date().nullable(),
@@ -9,7 +10,7 @@ const postCollection = defineCollection({
 });
 
 const noteCollection = defineCollection({
-	type: "content",
+	loader: glob({ pattern: "**/*.md", base: "./src/content/notes" }),
 	schema: z.object({
 		title: z.string(),
 		datePublished: z.date().nullable(),
@@ -17,7 +18,7 @@ const noteCollection = defineCollection({
 });
 
 const projectCollection = defineCollection({
-	type: "content",
+	loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
@@ -29,7 +30,7 @@ const projectCollection = defineCollection({
 });
 
 const gameCollection = defineCollection({
-	type: "content",
+	loader: glob({ pattern: "**/*.md", base: "./src/content/games" }),
 	schema: z.object({
 		title: z.string(),
 		dateCompleted: z.date(),
@@ -38,7 +39,7 @@ const gameCollection = defineCollection({
 });
 
 const bookCollection = defineCollection({
-	type: "content",
+	loader: glob({ pattern: "**/*.md", base: "./src/content/books" }),
 	schema: z.object({
 		title: z.string(),
 		id: z.string(),

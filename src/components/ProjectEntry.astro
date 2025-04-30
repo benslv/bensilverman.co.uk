@@ -3,34 +3,34 @@ import { Fragment } from "astro/jsx-runtime";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
-  project: CollectionEntry<"projects">;
+	project: CollectionEntry<"projects">;
 }
 
 const { project } = Astro.props;
 
 const {
-  data: { title, url, repoUrl, description, emoji },
+	data: { title, url, repoUrl, description, emoji },
 } = project;
 ---
 
 <p>
-  <span>{emoji}</span>
-  <a href={url ?? repoUrl} target="_blank">{title}</a>,
-  {description}
+	<span>{emoji}</span>
+	<a href={url ?? repoUrl} target="_blank">{title}</a>,
+	{description}
 </p>
 
 <style>
-  p {
-    color: var(--slate-11);
-    margin: 0;
-  }
-  a {
-    color: var(--slate-12);
-    font-weight: 500;
-    text-decoration: none;
+	p {
+		color: var(--slate-11);
+		margin: 0;
+	}
+	a {
+		color: var(--slate-12);
+		font-weight: 500;
+		text-decoration: none;
 
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 </style>
