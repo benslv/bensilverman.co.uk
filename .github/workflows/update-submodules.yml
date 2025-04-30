@@ -23,9 +23,9 @@ jobs:
                   # Fetch all history for all branches and tags
                   # This is necessary for git submodule update --remote
                   fetch-depth: 0
-                  persist-credentials: false
                   # Fetch submodules recursively
                   submodules: true
+                  persist-credentials: false
                   token: ${{ secrets.PAT_TOKEN }}
 
             # Configure Git user for commits
@@ -55,7 +55,13 @@ jobs:
               run: |
                   git add .
                   git commit -m "chore: Update submodules via GitHub Actions"
-                  git push
+
+            - name: Push changes
+              if: steps.check_changes.outputs.no_changes == 'false'
+              uses: ad-m/github-push-action@master
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  branch: master
 
             # Print a message if no changes were found
             - name: No Changes Found
