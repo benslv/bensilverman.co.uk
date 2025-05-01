@@ -6,15 +6,14 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import "../../styles/global.css";
 
 export const getStaticPaths = (async () => {
-	const notes = await getCollection(
-		"notes",
-		({ data }) => data.datePublished !== null
-	);
+  const notes = await getCollection("notes", ({ data }) =>
+    import.meta.env.PROD ? data.draft !== true : true
+  );
 
-	return notes.map((note) => ({
-		params: { id: note.id },
-		props: { note },
-	}));
+  return notes.map((note) => ({
+    params: { id: note.id },
+    props: { note },
+  }));
 }) satisfies GetStaticPaths;
 
 const { note } = Astro.props;
@@ -23,12 +22,12 @@ const { Content } = await render(note);
 ---
 
 <BaseLayout title={note.data.title}>
-	<p>
-		{
-			note.data.datePublished!.toLocaleString("en-GB", {
-				dateStyle: "medium",
-			})
-		}
-	</p>
-	<Content />
+  <p>
+    {
+      note.data.date.toLocaleString("en-GB", {
+        dateStyle: "medium",
+      })
+    }
+  </p>
+  <Content />
 </BaseLayout>
