@@ -1,0 +1,45 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+	book: CollectionEntry<"books">;
+}
+
+const { book } = Astro.props;
+
+const {
+	data: { title, author, rating, isbn },
+} = book;
+---
+
+<div>
+	<img
+		src=`https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`
+		width="200"
+		height="266"
+	/>
+	<h2 class="title">{title}</h2>
+	<p class="author">{author}</p>
+	<p class="rating">{"★".repeat(rating)}</p>
+</div>
+
+<style>
+	.title {
+		font-weight: 500;
+	}
+
+	.author {
+		white-space: nowrap;
+		margin: 0;
+		color: var(--slate-11);
+	}
+
+	.rating {
+		margin: 0;
+		color: var(--slate-11);
+	}
+
+	img {
+		border-radius: 0 16px 16px 0;
+	}
+</style>

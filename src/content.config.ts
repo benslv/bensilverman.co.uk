@@ -45,6 +45,7 @@ const bookCollection = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		id: z.string(),
+		isbn: z.string(),
 		author: z.string(),
 		rating: z.number().min(1).max(5),
 		date: z.date(),
