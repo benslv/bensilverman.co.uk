@@ -35,7 +35,7 @@ const gameCollection = defineCollection({
 	loader: glob({ pattern: "**/*.md", base: "./src/content/games" }),
 	schema: z.object({
 		title: z.string(),
-		dateCompleted: z.date(),
+		date: z.date(),
 		rating: z.number().min(1).max(5),
 	}),
 });
