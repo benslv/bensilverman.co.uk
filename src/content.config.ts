@@ -36,7 +36,7 @@ const gameCollection = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		dateCompleted: z.date(),
-		rating: z.number().int().min(1).max(5),
+		rating: z.number().min(1).max(5),
 	}),
 });
 
@@ -46,7 +46,7 @@ const bookCollection = defineCollection({
 		title: z.string(),
 		id: z.string(),
 		author: z.string(),
-		rating: z.number(),
+		rating: z.number().min(1).max(5),
 		date: z.date(),
 	}),
 });
