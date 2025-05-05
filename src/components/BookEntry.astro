@@ -15,8 +15,7 @@ const {
 <div>
 	<img
 		src=`https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`
-		width="200"
-		height="266"
+		width="230"
 	/>
 	<h2 class="title">{title}</h2>
 	<p class="author">{author}</p>
@@ -40,6 +39,8 @@ const {
 	}
 
 	img {
-		border-radius: 0 16px 16px 0;
+		border-radius: 4px;
+		aspect-ratio: 2/3;
+		max-width: 230px;
 	}
 </style>
