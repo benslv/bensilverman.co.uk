@@ -21,9 +21,7 @@ const { Content } = await render(note);
 <div class="container">
 	<h2 class="title"><a href={`/notes/${id}`}>{title}</a></h2>
 	<div class="divider"></div>
-	<p class="date">
-		{date?.toLocaleString("en-GB", { dateStyle: "medium" })}
-	</p>
+	<p class="date"></p>
 </div>
 <Content />
 
@@ -37,7 +35,7 @@ const { Content } = await render(note);
 	.divider {
 		height: 1px;
 		flex: 1;
-		background: var(--slate-6);
+		background: var(--sand-6);
 	}
 
 	.title {
@@ -52,7 +50,7 @@ const { Content } = await render(note);
 	}
 
 	.date {
-		color: var(--slate-11);
+		color: var(--sand-11);
 		white-space: nowrap;
 		margin: 0;
 	}
