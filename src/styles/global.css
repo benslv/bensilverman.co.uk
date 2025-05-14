@@ -164,4 +164,9 @@ blockquote {
 			margin-top: 1em;
 		}
 	}
+
+	code {
+		background: var(--brown-2);
+		border-color: var(--brown-5);
+	}
 }
