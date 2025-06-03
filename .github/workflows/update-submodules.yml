@@ -1,11 +1,6 @@
 name: Update Submodules
 
 on:
-    # Schedule the workflow to run every 30 minutes
-    schedule:
-        # The cron expression '*/30 * * * *' means "at every 30th minute"
-        # This will run at :00 and :30 past the hour
-        - cron: "0 */5 * * *"
     # Run when receiving an event from site-content
     repository_dispatch:
         types: [trigger-submodule-update]
