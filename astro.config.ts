@@ -1,4 +1,5 @@
 // @ts-check
+import { remarkWikiLink } from "@portaljs/remark-wiki-link";
 import { defineConfig } from "astro/config";
 
 import mdx from "@astrojs/mdx";
@@ -7,4 +8,19 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
 	integrations: [mdx()],
 	site: "https://bensilverman.co.uk",
+	markdown: {
+		remarkPlugins: [
+			[
+				remarkWikiLink,
+				{
+					hrefTemplate: (permalink: string) => {
+						return permalink
+							.split(" ")
+							.map((v) => v.toLowerCase())
+							.join("-");
+					},
+				},
+			],
+		],
+	},
 });
