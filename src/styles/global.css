@@ -170,3 +170,7 @@ blockquote {
 		border-color: var(--brown-5);
 	}
 }
+
+article img {
+	height: auto !important;
+}
