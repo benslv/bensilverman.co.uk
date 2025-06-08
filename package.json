@@ -11,10 +11,10 @@
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.4",
-		"@astrojs/mdx": "^4.2.5",
+		"@astrojs/mdx": "^4.3.0",
 		"@fontsource/inter": "^5.1.0",
 		"@radix-ui/colors": "^3.0.0",
-		"astro": "^5.7.9",
+		"astro": "^5.9.1",
 		"typescript": "^5.6.3"
 	}
 }
