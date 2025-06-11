@@ -16,11 +16,3 @@ const allProjects = await getCollection("projects", ({ data }) =>
 <div>
 	{allProjects.map((project) => <ProjectEntry project={project} />)}
 </div>
-
-<style>
-	div {
-		display: flex;
-		flex-direction: column;
-		row-gap: 4px;
-	}
-</style>

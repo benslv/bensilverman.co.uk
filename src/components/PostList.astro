@@ -3,36 +3,28 @@ import { getCollection } from "astro:content";
 import PostEntry from "./PostEntry.astro";
 
 interface Props {
-  limit?: number;
+	limit?: number;
 }
 
 const { limit } = Astro.props;
 
 const allPosts = await getCollection("posts", ({ data }) =>
-  import.meta.env.PROD ? data.draft !== true : true
+	import.meta.env.PROD ? data.draft !== true : true
 ).then((data) =>
-  data
-    .toSorted((a, b) => b.data.date.getTime() - a.data.date.getTime())
-    .slice(0, limit)
+	data
+		.toSorted((a, b) => b.data.date.getTime() - a.data.date.getTime())
+		.slice(0, limit)
 );
 ---
 
 <div class="container">
-  {
-    allPosts.map((post) => (
-      <PostEntry
-        slug={`/posts/${post.id}`}
-        title={post.data.title}
-        date={post.data.date}
-      />
-    ))
-  }
+	{
+		allPosts.map((post) => (
+			<PostEntry
+				slug={`/posts/${post.id}`}
+				title={post.data.title}
+				date={post.data.date}
+			/>
+		))
+	}
 </div>
-
-<style>
-  .container {
-    display: flex;
-    flex-direction: column;
-    row-gap: 4px;
-  }
-</style>
