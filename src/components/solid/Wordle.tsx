@@ -1,11 +1,12 @@
-import { createSignal } from "solid-js";
+import { createSignal, For } from "solid-js";
 import words from "./words.json";
+import { WordleGame } from "./WorldeGame";
 
 export function Wordle() {
 	const [answer, setAnswer] = createSignal<string>("");
 	const [guesses, setGuesses] = createSignal<string>("");
 
-	const [paths, setPaths] = createSignal();
+	const [paths, setPaths] = createSignal<Array<Array<string>>>();
 
 	const getPaths = () => {
 		const paths = calculatePaths(guesses(), answer());
@@ -29,7 +30,9 @@ export function Wordle() {
 			<button type="submit" onClick={getPaths}>
 				Submit
 			</button>
-			<p>{JSON.stringify(paths())}</p>
+			<For each={paths()}>
+				{(path) => <WordleGame answer={answer()} guesses={path} />}
+			</For>
 		</>
 	);
 }
