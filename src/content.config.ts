@@ -7,15 +7,7 @@ const postCollection = defineCollection({
 		title: z.string(),
 		date: z.date(),
 		draft: z.boolean(),
-	}),
-});
-
-const noteCollection = defineCollection({
-	loader: glob({ pattern: "**/*.md", base: "./src/content/notes" }),
-	schema: z.object({
-		title: z.string(),
-		date: z.date(),
-		draft: z.boolean(),
+		description: z.string().nullable().optional(),
 	}),
 });
 
@@ -54,7 +46,6 @@ const bookCollection = defineCollection({
 
 export const collections = {
 	posts: postCollection,
-	notes: noteCollection,
 	projects: projectCollection,
 	games: gameCollection,
 	books: bookCollection,
