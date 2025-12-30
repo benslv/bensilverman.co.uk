@@ -1,14 +1,15 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 
-import mdx from "@astrojs/mdx";
-import { remarkSlugify } from "./utils/remarkSlugify";
+import markdoc from "@astrojs/markdoc";
+import react from "@astrojs/react";
+import keystatic from "@keystatic/astro";
+
+import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [mdx()],
-	site: "https://bensilverman.co.uk",
-	markdown: {
-		remarkPlugins: [remarkSlugify],
-	},
+  integrations: [react(), markdoc(), keystatic()],
+  site: "https://bensilverman.co.uk",
+  adapter: netlify(),
 });
