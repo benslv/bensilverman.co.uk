@@ -1,23 +1,17 @@
 ---
 import { getCollection } from "astro:content";
-import PostEntry from "./PostEntry.astro";
-
-interface Props {
-	limit?: number;
-}
-
-const { limit } = Astro.props;
+import PostEntry from "../components/PostEntry.astro";
+import Layout from "../layouts/Layout.astro";
 
 const allPosts = await getCollection("posts", ({ data }) =>
 	import.meta.env.PROD ? data.draft !== true : true
 ).then((data) =>
-	data
-		.toSorted((a, b) => b.data.date.getTime() - a.data.date.getTime())
-		.slice(0, limit)
+	data.toSorted((a, b) => b.data.date.getTime() - a.data.date.getTime())
 );
 ---
 
-<div class="container">
+<Layout>
+	<h1>Blog</h1>
 	{
 		allPosts.map((post) => (
 			<PostEntry
@@ -27,4 +21,4 @@ const allPosts = await getCollection("posts", ({ data }) =>
 			/>
 		))
 	}
-</div>
+</Layout>
