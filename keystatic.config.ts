@@ -1,10 +1,14 @@
 import { collection, config, fields } from "@keystatic/core";
 
+const isProduction = process.env.NODE_ENV === "production";
+
 export default config({
-	storage: {
-		kind: "github",
-		repo: "benslv/www",
-	},
+	storage: isProduction
+		? {
+				kind: "github",
+				repo: "benslv/www",
+		  }
+		: { kind: "local" },
 	collections: {
 		posts: collection({
 			label: "Posts",
