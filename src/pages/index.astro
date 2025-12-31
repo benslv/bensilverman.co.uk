@@ -4,8 +4,6 @@ import Layout from "../layouts/Layout.astro";
 
 const entry = await getEntry("pages", "index")!;
 
-console.log(process.env);
-
 const { Content } = await render(entry);
 ---
 
