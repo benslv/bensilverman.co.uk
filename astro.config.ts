@@ -9,7 +9,7 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), markdoc(), keystatic()],
-  site: "https://bensilverman.co.uk",
-  adapter: netlify(),
+	integrations: [react(), markdoc(), keystatic()],
+	site: "https://bensilverman.co.uk",
+	adapter: netlify(),
 });
