@@ -9,4 +9,41 @@ const { Content } = await render(entry);
 
 <Layout>
 	<Content />
+
+	<div id="nowplaying">
+		<span>Listening to...</span>
+		<span id="lastfm"></span>
+	</div>
+
+	<script>
+		async function fetchNowPlaying() {
+			try {
+				const response = await fetch("/.netlify/functions/nowplaying");
+				const track = await response.json();
+
+				const nowPlaying = track["@attr"]?.nowplaying
+					? `<em><a href="${track.url}" target="_blank">${track.name}</a></em>
+					by <a href="https://www.last.fm/music/${encodeURIComponent(track.artist["#text"])}" target="_blank">${track.artist["#text"]}</a>`
+					: "nothing!";
+
+				document.getElementById("lastfm")!.innerHTML = nowPlaying;
+			} catch (error) {
+				console.error("Error:", error);
+
+				document.getElementById("lastfm")!.innerHTML = "nothing!";
+			}
+		}
+
+		fetchNowPlaying();
+	</script>
 </Layout>
+
+<style>
+	#nowplaying {
+		background: var(--sand-1);
+		border: 1px solid var(--brown-5);
+		border-radius: 4px;
+		padding: 8px;
+		text-align: center;
+	}
+</style>
